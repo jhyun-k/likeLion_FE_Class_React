@@ -41,7 +41,7 @@ function Three(){
 
 function Blog(){
     const location = useLocation();
-  console.log(location)
+    console.log(location)
   return <h1>hello Blog</h1>
 }
 

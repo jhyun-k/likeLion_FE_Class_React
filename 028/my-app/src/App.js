@@ -44,7 +44,9 @@ const CardTwo = (props) => {
         <div>
           <button>이미지 저장</button>
           <button>트위터</button>
+          <button>인스타그램</button>
           <button>페이스북</button>
+          <button>카카오스토리</button>
         </div>
       </CardDivTwo>
     </>

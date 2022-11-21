@@ -39,7 +39,6 @@ function Counter (){
       <button onClick={handleTwoUp}>Up!</button>
       <div>{three}</div>
       <button onClick={handleThreeUp}>Up!</button>
-      
       {/* 이벤트가 발생해도 재렌더링 되지 않습니다! */}
       <div>{test}</div>
       <button onClick={handleTestUp}>Up!</button>

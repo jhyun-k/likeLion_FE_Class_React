@@ -7,13 +7,19 @@ function Time(props) {
   const [sec, setSec] = useState(today.getSeconds());
   console.log("렌더링이 됩니다..?")//렌더링이 잘 되는지 확인용! 꼭 넣고 진행해주세요.
 
-  setInterval(() => {
-    const t = new Date();
-    setToday(t);
-    setHour(t.getHours());
-    setMin(t.getMinutes());
-    setSec(t.getSeconds());
-  }, 1000);
+  useEffect(() => {
+    let time = setInterval(() => {
+      const t = new Date();
+      setToday(t);
+      setHour(t.getHours());
+      setMin(t.getMinutes());
+      setSec(t.getSeconds());
+    }, 1000);
+    return () => {
+			//컴포넌트가 사라지기 전에 setinterval을 clearinterval해줍니다
+      clearInterval(time);
+    };
+  }, [today]);
 
   return (
     <div>

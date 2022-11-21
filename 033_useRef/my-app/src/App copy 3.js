@@ -1,23 +1,34 @@
-import React from 'react'
-import { useState, useEffect, useRef } from 'react'
+import React, { useRef, useState } from "react";
 
+const App = () => {
+  const emailInput = useRef(null); // email input에 대한 useRef
+  const pwInput = useRef(null); // pw input에 대한 useRef
 
-export default function App() {
-  const searchValue = useRef(null)
-  const handleSearch = (e)=>{
-    console.log('click 했어여')
-    console.log(searchValue.current.value)
+  const [emailValue, setEmailValue] = useState(""); // email state 값
+  const [pwValue, setPwValue] = useState(""); // pw state 값
 
-    
+  const inputCheck = (e) => {
+    e.preventDefault();
+    setEmailValue(emailInput.current.value);
+    setPwValue(pwInput.current.value);
+  };
 
-    searchValue.current.value = 'hello'
-  }
   return (
-    <div>
-        <label htmlFor="">검색어를 입력하세요 :
-        <input type="text" ref={searchValue}/>
-        </label>
-        <button onClick={handleSearch}>검색</button>
-    </div>
-  )
-}
+    <form style={{ display: "flex", flexDirection: "column" }}>
+      <label>
+        이메일 : <input type="email" ref={emailInput} />
+      </label>
+      <label>
+        비밀번호 : <input type="password" ref={pwInput} />
+      </label>
+
+      <button type="submit" style={{ width: "100px" }} onClick={inputCheck}>
+        회원가입
+      </button>
+      <span>{emailValue}</span>
+      <span>{pwValue}</span>
+    </form>
+  );
+};
+
+export default App;

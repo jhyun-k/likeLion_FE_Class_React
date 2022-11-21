@@ -8,14 +8,8 @@ function Counter() {
   }
 
   useEffect(() => {
-    if( count !== 0){
-      if(count % 2) {
-        alert("홀수입니다")
-      } else {
-        alert("짝수입니다")
-      }
-    }
-  }, [count])
+    console.log('실행되었습니다!!')
+  }, [])
 
   return(
     <>

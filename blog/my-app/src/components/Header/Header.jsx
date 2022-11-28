@@ -1,8 +1,13 @@
+import { useContext } from "react"
+import UserContext from "../../context/UserContext"
 import { Link } from "react-router-dom"
 import imgLogo from "../../assets/Logo.svg"
 import "./header.css"
+import Login from "./Login/Login"
+import Logout from "./Logout/Logout"
 
 export default function Header() {
+  const { isLogin } = useContext(UserContext)
   return (
     <>
       <header>
@@ -13,25 +18,7 @@ export default function Header() {
             </Link>
           </h1>
           <ul>
-            {/* 로그인 */}
-            <li className="profile-img">
-              <Link to="/">
-                <img src="https://github.com/weniv/react-blog/blob/react/public/assets/profile.jpg?raw=true" alt="My Page" />
-              </Link>
-            </li>
-            <li>
-              <Link to="/" className="button">
-                <img src="./assets/icon-modify-white.svg" alt="" />
-                <span>Write</span>
-              </Link>
-            </li>
-            <li>
-              <button className="button white">
-                <img src="./assets/icon-logout.svg" alt="" />
-                <span>Logout</span>
-              </button>
-            </li>
-            {/* //로그인 */}
+            {isLogin? <Login /> : <Logout/> }
           </ul>
         </div>
       </header>

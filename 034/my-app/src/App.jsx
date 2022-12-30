@@ -31,12 +31,12 @@ export default function App() {
 
   return (
     <>
-      <h1>엄청난 연산값</h1>
+      <h4> ✨ 엄청난 연산값</h4>
       <p>{calc}</p>
-      <h2>숫자바꾸기</h2>
+      <h4> ✨ 숫자바꾸기</h4>
       <button onClick={increaseNum}>+</button>
       <button onClick={decreaseNum}>-</button>
-      <h2>글자바꾸기</h2>
+      <h4> ✨ 글자바꾸기</h4>
       <input type="text" onChange={handleText} />
       <ShowState number={number} text={text} />
     </>

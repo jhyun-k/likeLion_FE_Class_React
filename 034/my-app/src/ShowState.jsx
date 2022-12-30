@@ -11,11 +11,11 @@ export default function ShowState({ number, text }) {
     return text;
   };
 
-  // const showNum = consoleNumber(number);
-  // const showText = consoleText(text);
+  const showNum = consoleNumber(number);
+  const showText = consoleText(text);
 
-  const showNum = useMemo(() => consoleNumber(number), [number]);
-  const showText = useMemo(() => consoleText(text), [text]);
+  // const showNum = useMemo(() => consoleNumber(number), [number]);
+  // const showText = useMemo(() => consoleText(text), [text]);
 
   return (
     <div>
